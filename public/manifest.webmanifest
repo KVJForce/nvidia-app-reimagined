@@ -1,0 +1,23 @@
+{
+  "name": "NVIDIA App — Reimagined",
+  "short_name": "NVIDIA App",
+  "description": "A clean, focused NVIDIA App concept with live GPU telemetry, driver updates, and your Steam library.",
+  "start_url": "/#/home",
+  "display": "standalone",
+  "background_color": "#08090a",
+  "theme_color": "#08090a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

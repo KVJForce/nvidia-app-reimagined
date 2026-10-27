@@ -1,0 +1,22 @@
+{
+  "name": "nvidia-app-reimagined",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A clean, focused NVIDIA App concept with real GPU telemetry and Steam library discovery.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "nvidia",
+    "gpu",
+    "steam",
+    "dashboard",
+    "concept"
+  ],
+  "license": "UNLICENSED"
+}

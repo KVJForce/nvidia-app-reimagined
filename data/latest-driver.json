@@ -1,0 +1,20 @@
+{
+  "version": "621.01",
+  "type": "Game Ready Driver",
+  "branch": "R620",
+  "releaseDate": "2026-10-21",
+  "sizeLabel": "989 MB",
+  "sizeBytes": 1037200000,
+  "whql": true,
+  "downloadUrl": "https://us.download.nvidia.com/Windows/621.01/621.01-desktop-win10-win11-64bit-international-dch-whql.exe",
+  "detailsUrl": "https://www.nvidia.com/en-us/drivers/details/282412/",
+  "highlights": [
+    "Game Ready for Phantom Blade Zero and Call of Duty: Modern Warfare 4.",
+    "Launch-day optimizations for NBA 2K27, Cyberpunk 2077, and Crimson Desert Enhanced.",
+    "Vulkan 1.4 support plus general stability and performance improvements."
+  ],
+  "fixed": [
+    "Meta Horizon Link stream could freeze when connected over USB.",
+    "Intermittent dimming on certain ASUS notebooks after updating to R620 drivers."
+  ]
+}
