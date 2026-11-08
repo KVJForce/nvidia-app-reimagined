@@ -1,24 +1,14 @@
 @echo off
 chcp 65001 >nul
-setlocal
-
 cd /d "%~dp0"
 
-echo.
-echo Starting NVIDIA App - Reimagined locally...
-echo.
+:: Starta servern dold i bakgrunden (inget synligt kommandotolksfonster)
+powershell -WindowStyle Hidden -Command "Start-Process -FilePath 'node' -ArgumentList 'server.js' -WorkingDirectory '%~dp0' -WindowStyle Hidden"
 
-:: Starta servern i ett eget fonster (stang det for att avsluta programmet)
-start "NVIDIA App - Server" node server.js
+:: Ge servern ett par sekunder att starta innan webblasen oppnas
+timeout /t 5 >nul
 
-:: Vanta pa att servern blir tillganglig (max ca 10 sekunder)
-for /L %%i in (1,1,30) do (
-    curl.exe -s -m 1 http://127.0.0.1:4173/ >nul 2>&1 && goto :ready
-    timeout /t 1 >nul
-)
-:ready
-
-:: Oppna i webblasarens app-lage (fristaende fonster utan adressfalt/flikar)
+:: Oppna appen i webblasarens app-lage (ett eget fonster utan adressfalt/flikar)
 set BROWSER=
 if exist "%ProgramFiles%\Microsoft\Edge\Application\msedge.exe" set BROWSER=%ProgramFiles%\Microsoft\Edge\Application\msedge.exe
 if exist "%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe" set BROWSER=%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe
@@ -32,11 +22,5 @@ if defined BROWSER (
     start http://127.0.0.1:4173/
 )
 
-echo.
-echo ---------------------------------------------------------------
-echo NVIDIA App is running locally: http://127.0.0.1:4173
-echo - Everything runs on your computer; nothing is sent online.
-echo - Close the black server window to stop the program.
-echo ---------------------------------------------------------------
-echo.
-pause
+:: Stang startfönstret nar appen har startats
+exit
